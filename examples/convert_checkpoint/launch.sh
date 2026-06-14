@@ -7,6 +7,8 @@
 
 set -euo pipefail
 export PYTHONUNBUFFERED=1
+REPO_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/../.." && pwd)"
+export PYTHONPATH="${REPO_ROOT}:${PYTHONPATH:-}"
 
 # Launch the conversion.
 SCRIPT=examples/convert_checkpoint/$1/script.py

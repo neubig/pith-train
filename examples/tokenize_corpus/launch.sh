@@ -10,6 +10,8 @@
 
 set -euo pipefail
 export PYTHONUNBUFFERED=1
+REPO_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/../.." && pwd)"
+export PYTHONPATH="${REPO_ROOT}:${PYTHONPATH:-}"
 
 # Launch the tokenization.
 SCRIPT=examples/tokenize_corpus/$1/script.py

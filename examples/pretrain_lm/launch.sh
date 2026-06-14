@@ -11,6 +11,8 @@
 set -euo pipefail
 export OMP_NUM_THREADS=8
 export PYTHONUNBUFFERED=1
+REPO_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/../.." && pwd)"
+export PYTHONPATH="${REPO_ROOT}:${PYTHONPATH:-}"
 
 if [ $# -ne 1 ]; then
     echo "Usage: launch.sh <model>" >&2
